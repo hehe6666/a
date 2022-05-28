@@ -1,0 +1,62 @@
+spring:
+  #要加这个才能显示图片，指定了类路径作为静态资源路径
+  web:
+    resources:
+      static-locations: classpath:/
+  datasource:
+    url: jdbc:mysql://47.113.220.30:3306/practice?serverTimezone=UTC&useSSL=false&characterEncoding=utf8
+    username: root
+    password: Lhx1353796541.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    druid:
+      filters: stat,wall
+      aop-patterns: com.xuan.boot05webadmin
+      stat-view-servlet:
+        enabled: true
+        allow: 127.0.0.1
+        login-username: root
+        login-password: 123456
+        reset-enable: false
+
+      web-stat-filter:
+        enabled: false
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+      filter:
+        stat:
+          slow-sql-millis: 1000
+          log-slow-sql: true
+          enabled: true
+        wall:
+          enabled: true
+          config:
+            update-allow: false
+
+#  thymeleaf:
+#    prefix: classpath:/templates/  #prefix：指定模板所在的目录
+#    check-template-location: true  #check-tempate-location: 检查模板路径是否存在
+#    cache: false  #cache: 是否缓存，开发模式下设置为false，避免改了模板还要重启服务器，线上设置为true，可以提高性能。
+#    suffix: .html
+#    #encoding: UTF-8
+#    #content-type: text/html
+#    mode: HTML5
+  redis:
+    host: 47.113.220.30
+    port: 6379
+    password: Lhx1353796541.
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+
+
+mybatis:
+  #  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+  configuration: #指定mabatis里全局配置文件的相关配置项，写这个就不能写上面那个config-location
+    map-underscore-to-camel-case: true
+server:
+  port: 8081

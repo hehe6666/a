@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--environments：环境们，mybaits可以配置多种环境 default指定使用哪个environment，达到快速切换环境
+
+        environment：具体配置一个环境信息，id代表当前环境的唯一标识
+        必须有的两个标签：transactionManager：事务管理器，jdbc
+                    dataSource：数据源  type:数据源类型（UNPOOLED|POOLED|JNDI）
+
+    -->
+<!--    <environments default="development">-->
+<!--        <environment id="development">-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/test2"/>-->
+<!--                <property name="username" value="root" />-->
+<!--                <property name="password" value="root"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+<!--    </environments>-->
+
+    <!-- 一定要将写好的sql文件映射到全局配置文件里 -->
+<!--    <mappers>-->
+<!--        <mapper resource="com/atguigu/mybaits/dao/EmployeeMapper.xml"/>-->
+<!--    </mappers>-->
+</configuration>
