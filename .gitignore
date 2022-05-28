@@ -29,3 +29,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+###需要过滤的文件夹或者文件###
+.idea　　　　
+.mvn　　　　
+.iml
+mvnw
+mvnw.cmd
+logs/
+
+/node_modules/
+/build/
+复制
